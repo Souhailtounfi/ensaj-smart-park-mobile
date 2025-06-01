@@ -1,8 +1,17 @@
-
-import React, { useState } from 'react';
-import { Menu, X, Car, MapPin, BarChart3, User, Settings, LogOut } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import React, { useState } from "react";
+import {
+  Menu,
+  X,
+  Car,
+  MapPin,
+  BarChart3,
+  User,
+  Settings,
+  LogOut,
+  Ticket,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface NavigationProps {
   currentPage: string;
@@ -20,11 +29,9 @@ const Navigation: React.FC<NavigationProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { id: 'home', label: 'Accueil', icon: Car },
-    { id: 'map', label: 'Carte Parking', icon: MapPin },
-    { id: 'stats', label: 'Statistiques', icon: BarChart3 },
-    { id: 'profile', label: 'Profil', icon: User },
-    { id: 'settings', label: 'Paramètres', icon: Settings },
+    { id: "home", label: "Accueil", icon: Car },
+    { id: "map", label: "Carte Parking", icon: MapPin },
+    { id: "profile", label: "Profil", icon: User },
   ];
 
   const handlePageChange = (pageId: string) => {
@@ -42,7 +49,7 @@ const Navigation: React.FC<NavigationProps> = ({
               <Car className="h-8 w-8 mr-2" />
               <span className="font-bold text-lg">ENSAJ Smart Park</span>
             </div>
-            
+
             {isAuthenticated && (
               <div className="flex items-center space-x-4">
                 <Button
@@ -51,9 +58,13 @@ const Navigation: React.FC<NavigationProps> = ({
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   className="text-white hover:bg-white/20 md:hidden"
                 >
-                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                  {isMenuOpen ? (
+                    <X className="h-6 w-6" />
+                  ) : (
+                    <Menu className="h-6 w-6" />
+                  )}
                 </Button>
-                
+
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-4">
                   {menuItems.map((item) => {
@@ -61,7 +72,9 @@ const Navigation: React.FC<NavigationProps> = ({
                     return (
                       <Button
                         key={item.id}
-                        variant={currentPage === item.id ? "secondary" : "ghost"}
+                        variant={
+                          currentPage === item.id ? "secondary" : "ghost"
+                        }
                         className={cn(
                           "text-white hover:bg-white/20",
                           currentPage === item.id && "bg-white/30"
@@ -124,8 +137,8 @@ const Navigation: React.FC<NavigationProps> = ({
       {/* Bottom Navigation for Mobile */}
       {isAuthenticated && (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40">
-          <div className="grid grid-cols-4 h-16">
-            {menuItems.slice(0, 4).map((item) => {
+          <div className="grid grid-cols-3 h-16">
+            {menuItems.slice(0, 3).map((item) => {
               const Icon = item.icon;
               return (
                 <button
@@ -139,7 +152,7 @@ const Navigation: React.FC<NavigationProps> = ({
                   )}
                 >
                   <Icon className="h-5 w-5 mb-1" />
-                  <span>{item.label.split(' ')[0]}</span>
+                  <span>{item.label.split(" ")[0]}</span>
                 </button>
               );
             })}

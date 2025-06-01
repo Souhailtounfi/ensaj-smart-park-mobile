@@ -7,6 +7,7 @@ import Dashboard from '@/components/Dashboard';
 import ParkingMap from '@/components/ParkingMap';
 import Statistics from '@/components/Statistics';
 import { useToast } from '@/hooks/use-toast';
+import { ReservationForm } from '@/components/ReservationForm';
 
 const Index = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -65,6 +66,8 @@ const Index = () => {
         return <ParkingMap />;
       case 'stats':
         return <Statistics />;
+      case 'settings':
+        return <ReservationForm />;
       case 'profile':
         return (
           <div className="p-4 pb-20 md:pb-4 max-w-4xl mx-auto">
