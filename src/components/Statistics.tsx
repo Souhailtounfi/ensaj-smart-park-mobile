@@ -36,7 +36,6 @@ const Statistics: React.FC = () => {
     { hour: '15:00', percentage: 75 },
     { hour: '16:00', percentage: 60 },
     { hour: '17:00', percentage: 45 },
-    { hour: '18:00', percentage: 30 },
   ];
 
   const getBarHeight = (percentage: number) => {
@@ -182,11 +181,11 @@ const Statistics: React.FC = () => {
         <CardContent>
           <div className="space-y-4">
             {[
-              { name: 'Zone A - Principal', utilization: 92, revenue: '€2,340', rating: 4.5 },
-              { name: 'Zone B - Enseignants', utilization: 78, revenue: '€1,890', rating: 4.8 },
-              { name: 'Zone C - Visiteurs', utilization: 65, revenue: '€1,245', rating: 4.2 },
-              { name: 'Zone D - Personnel', utilization: 85, revenue: '€1,675', rating: 4.6 },
-              { name: 'Zone E - Électrique', utilization: 88, revenue: '€2,100', rating: 4.9 },
+              { name: 'Zone A - Principal', utilization: 92},
+              { name: 'Zone B - Enseignants', utilization: 78},
+              { name: 'Zone C - Visiteurs', utilization: 65},
+              { name: 'Zone D - Personnel', utilization: 85},
+              { name: 'Zone E - Électrique', utilization: 88 },
             ].map((zone, index) => (
               <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
                 <div className="flex-1">
@@ -201,13 +200,6 @@ const Statistics: React.FC = () => {
                       </div>
                       <span className="text-sm text-gray-600">{zone.utilization}%</span>
                     </div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="font-semibold text-green-600">{zone.revenue}</p>
-                  <div className="flex items-center space-x-1">
-                    <span className="text-yellow-500">★</span>
-                    <span className="text-sm">{zone.rating}</span>
                   </div>
                 </div>
               </div>

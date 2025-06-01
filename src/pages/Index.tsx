@@ -23,10 +23,10 @@ const Index = () => {
     const mockUser = {
       id: 1,
       email,
-      firstName: 'Jean',
-      lastName: 'Dupont',
+      firstName: 'Souhail',
+      lastName: 'Tounfi',
       userType: 'student',
-      department: 'Génie Informatique'
+      department: 'TRI'
     };
     
     setUser(mockUser);

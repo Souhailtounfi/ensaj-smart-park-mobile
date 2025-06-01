@@ -23,7 +23,7 @@ const ParkingMap: React.FC = () => {
       name: 'Zone B - Enseignants',
       available: 18,
       total: 60,
-      position: { x: 60, y: 20 },
+      position: { x: 83, y: 30 },
       type: 'faculty',
       description: 'Zone réservée aux enseignants'
     },
@@ -189,10 +189,7 @@ const ParkingMap: React.FC = () => {
                   <Navigation className="h-4 w-4 mr-2" />
                   Y aller
                 </Button>
-                <Button variant="outline" className="flex-1">
-                  <Clock className="h-4 w-4 mr-2" />
-                  Réserver
-                </Button>
+                
               </div>
             </div>
           </CardContent>
